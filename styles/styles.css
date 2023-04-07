@@ -1,0 +1,38 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+.carousel-container .carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.carousel-container .carousel-item img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+.carousel-container .carousel-item h3 {
+  margin: 10px;
+  font-size: 18px;
+}
+.carousel-container .carousel-item p {
+  margin: 0 10px 10px 10px;
+  font-size: 14px;
+}/*# sourceMappingURL=styles.css.map */
