@@ -1,0 +1,22 @@
+{
+  "name": "retro_games",
+  "version": "1.0.0",
+  "description": "Minimalist retro games clone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WDRG22/retro_games.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WDRG22/retro_games/issues"
+  },
+  "homepage": "https://github.com/WDRG22/retro_games#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

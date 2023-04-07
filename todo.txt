@@ -1,3 +1,5 @@
-- Create navbar w/ link to github
-- Create router system for game pages
-- create pong game to start
+- Add github and linkedin links to navbar or elsewhere on page
+- Implement express router system to serve home and game pages to frontend
+- Implement localStorage api to store high scores and other data in browser cache
+- Create pong game using vanilla javascript first to use as POC 
+    - Research libraries useful for in-browser games (flash? html5?)
