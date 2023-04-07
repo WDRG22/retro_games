@@ -1,43 +1,49 @@
-html, body {
-    height: 100%;
+body {
+    height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-  }
-  
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
 
-.carousel-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-behavior: smooth;
-  
-    .carousel-item {
-      flex: 0 0 auto;
-      width: 300px;
-      margin-right: 20px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  
-      img {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .games-container {
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      background-color: rgb(45, 112, 213);
+    
+      .game-item {
         width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 5px 5px 0 0;
-      }
-  
-      h3 {
-        margin: 10px;
-        font-size: 18px;
-      }
-  
-      p {
-        margin: 0 10px 10px 10px;
-        font-size: 14px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        background-color: rgb(189, 12, 12);
+    
+        img {
+          width: 50%;
+          height: 50%;
+          object-fit: contain;
+        }
+    
+        h3 {
+          font-size: 18px;
+        }
+    
+        p {
+          font-size: 14px;
+        }
       }
     }
   }
+  
+  
   
