@@ -1,0 +1,3 @@
+- Create navbar w/ link to github
+- Create router system for game pages
+- create pong game to start
