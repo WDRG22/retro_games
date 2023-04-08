@@ -21,6 +21,12 @@ body {
 
     .site-title{
       margin: 0;
+      color: black;
+
+      a{
+        color: inherit;
+        text-decoration: none;
+      }
     }
   }
 
@@ -29,17 +35,28 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .left,
     .right {
-       border: none;
-       background: rgba(0, 0, 0, 0);
-       cursor: pointer;
-       color: black;
-       font-size: 5rem;
-       overflow: hidden;
-       text-align: end;
+      height: 15%;
+      border: none;
+      background: rgba(0, 0, 0, 0);
+      cursor: pointer;
+      color: black;
+      font-size: 5rem;
+      overflow: hidden;
+      text-align: end;
     }
+
+    .left{
+      margin-left: 25px;
+    }
+    
+    .right{
+      margin-right: 25px;
+    }
+
     
     .games-carousel {
       width: 100%;
@@ -50,7 +67,7 @@ body {
       overflow-x: scroll;
       flex-direction: row;
       justify-content: left;
-      scroll-snap-type: x mandatory;
+      scroll-snap-type: x proximity;
       
       .game-section{
         width: 100%;
@@ -75,10 +92,18 @@ body {
             height: 50%;
             object-fit: contain;
           }
+
+          .game-info{
+            padding-left: 25px;
+          }
       
           h3{
             font-weight: normal;
             font-style: italic;
+          }
+
+          a{
+            color: inherit;
           }
         }    
       }
