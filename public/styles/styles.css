@@ -12,18 +12,17 @@ body {
   background-color: #C41E3A;
 }
 body .navbar {
-  list-style-type: none;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  color: black;
   font-size: larger;
   font-weight: bold;
-  margin: 0;
-  padding-top: 10px;
-  padding-left: 25px;
+  align-items: center;
+  list-style-type: none;
+  justify-content: space-between;
 }
-body .navbar .site-title {
-  margin: 0;
-  color: black;
-}
-body .navbar .site-title a {
+body .navbar a {
   color: inherit;
   text-decoration: none;
 }

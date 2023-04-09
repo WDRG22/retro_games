@@ -1,34 +1,21 @@
 const express = require('express')
+const ejs = require('ejs')
 const app = express()
 const path = require('path')
 const port = 3000
 
+// Middleware
 app.use(express.static(path.join(__dirname, '../public')))
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve('public', 'index.html'))
+// Set view engine to ejs
+app.set('view engine', 'ejs')
+
+// route for index page
+app.get('*', (req, res) => {
+  res.render('index', {route: req.url})
 })
 
-app.get('/pong', (req, res) => {
-  res.sendFile(path.resolve('public', 'game.html'))
-})
-
-app.get('/pacman', (req, res) => {
-  res.sendFile(path.resolve('public', 'game.html'))
-})
-
-app.get('/tetris', (req, res) => {
-  res.sendFile(path.resolve('public', 'game.html'))
-})
-
-app.get('/spaceinvaders', (req, res) => {
-  res.sendFile(path.resolve('public', 'game.html'))
-})
-
-app.get('/mario', (req, res) => {
-  res.sendFile(path.resolve('public', 'game.html'))
-})
-
+// binds to port to listen for any connections
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })
