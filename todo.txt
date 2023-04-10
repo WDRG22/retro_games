@@ -1,10 +1,21 @@
 - [DONE] Edit carousel to loop infinitely
-- Swap left/right arrow carats for chevron icons (neo-brutalism aesthetic)
+- [CANCELLED]Implement express router system to serve home and game pages to frontend
+- Implement fetch API for client-side rendering
+- Implement history API for client-side routing
+- Implement localStorage API to store high scores and other data in browser cache
 - Add github, twitter, linkedin links to navbar or elsewhere 
-- Implement express router system to serve home and game pages to frontend
-- Create game page template for all games
-    - Alternatively, create individual game pages for each game
-- Implement localStorage api to store high scores and other data in browser cache
 - Create pong game using vanilla javascript first to use as POC 
-    - Research libraries useful for in-browser games (flash? html5?)
-		- https://gist.github.com/straker/3c98304f8a6a9174efd8292800891ea1
+    - Use HTML5 canvas element and keyboard events API to implement browser games
+    - Explore possible use of libraries such as Konva.js or Phaser.js
+	- https://gist.github.com/straker/3c98304f8a6a9174efd8292800891ea1
+
+Long-Term:
+- Implement user authentication ??
+- Create and connect SQL database ??
+- Refactor site to store user accounts and game data in database ??
+- Host site on aws ?? 
+- Register a domain name ??
+- Confiugre DNS ??
+- Set up a server (nginx?) ??
+- Add security ??
+- Use tools to test website ??

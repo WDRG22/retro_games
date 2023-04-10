@@ -10,7 +10,7 @@ export default function initializeCarousel(){
 
     let scrollPosition = 0 
 
-    // Updates carousel scroll position to display each game 
+    // Updates carousel scroll position to display games 
     // based on arrow click or key press
     function updateScrollPosition(delta){
         scrollPosition += delta

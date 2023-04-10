@@ -18,7 +18,7 @@ body .navbar {
   color: black;
   font-size: larger;
   font-weight: bold;
-  align-items: center;
+  align-items: flex-end;
   list-style-type: none;
   justify-content: space-between;
 }
