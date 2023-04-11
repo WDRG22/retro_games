@@ -11,7 +11,11 @@ body {
   text-transform: uppercase;
   background-color: #C41E3A;
 }
-body #main-nav {
+body #root {
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-nav {
   margin-left: 25px;
   margin-right: 25px;
   display: flex;
@@ -22,19 +26,19 @@ body #main-nav {
   list-style-type: none;
   justify-content: space-between;
 }
-body #main-nav a {
+body #root #main-nav a {
   color: inherit;
   text-decoration: none;
 }
-body .carousel-container {
+body #root .carousel-container {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .carousel-container .left,
-body .carousel-container .right {
+body #root .carousel-container .left,
+body #root .carousel-container .right {
   height: 15%;
   border: none;
   background: rgba(0, 0, 0, 0);
@@ -44,13 +48,13 @@ body .carousel-container .right {
   overflow: hidden;
   text-align: end;
 }
-body .carousel-container .left {
+body #root .carousel-container .left {
   margin-left: 25px;
 }
-body .carousel-container .right {
+body #root .carousel-container .right {
   margin-right: 25px;
 }
-body .carousel-container .games-carousel {
+body #root .carousel-container .games-carousel {
   width: 100%;
   height: 100%;
   display: flex;
@@ -61,7 +65,7 @@ body .carousel-container .games-carousel {
   justify-content: left;
   scroll-snap-type: x proximity;
 }
-body .carousel-container .games-carousel .game-section {
+body #root .carousel-container .games-carousel .game-section {
   width: 100%;
   height: 100%;
   flex: none;
@@ -71,7 +75,7 @@ body .carousel-container .games-carousel .game-section {
   scroll-snap-align: center;
   scroll-snap-stop: normal;
 }
-body .carousel-container .games-carousel .game-section .game-item {
+body #root .carousel-container .games-carousel .game-section .game-item {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -79,19 +83,19 @@ body .carousel-container .games-carousel .game-section .game-item {
   align-items: center;
   justify-content: center;
 }
-body .carousel-container .games-carousel .game-section .game-item img {
+body #root .carousel-container .games-carousel .game-section .game-item img {
   width: 50%;
   height: 50%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-body .carousel-container .games-carousel .game-section .game-item .game-info {
+body #root .carousel-container .games-carousel .game-section .game-item .game-info {
   padding-left: 25px;
 }
-body .carousel-container .games-carousel .game-section .game-item h3 {
+body #root .carousel-container .games-carousel .game-section .game-item h3 {
   font-weight: normal;
   font-style: italic;
 }
-body .carousel-container .games-carousel .game-section .game-item a {
+body #root .carousel-container .games-carousel .game-section .game-item a {
   color: inherit;
 }/*# sourceMappingURL=styles.css.map */

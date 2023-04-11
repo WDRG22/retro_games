@@ -4,7 +4,6 @@ const path = require('path')
 const port = 3000
 
 // middleware
-console.log(__dirname )
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('*', (req, res) => {
