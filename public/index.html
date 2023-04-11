@@ -8,70 +8,75 @@
     <title>Home | RETRO GAMES</title>
 </head>
 <body>
-    <nav class="navbar">
+  <div id="root">
+    <nav id="main-nav">
       <h1 class="site-title">
-      <a href="/">Retro Game Clones</a> 
-    </h1>
-    <h4 class="profile-icon">
-      <a href="">Profile</a>
-    </h4>
+        <a href="/">Retro Game Clones</a> 
+      </h1>
+      <h4 class="profile-icon">
+        <a href="/">Profile</a>
+      </h4>
     </nav>
-    <div class="carousel-container">
-      <button class="left"> < </button>
-      <div class="games-carousel">
-          <section class="game-section">
-            <div class="game-item">
-              <img src="images/pong.jpg" alt="Game 1">
-              <div class="game-info">
-                <h2>Pong</h2>
-                <h3>1972</h3>
-                <a href="/pong" class="play-link">Play Now ></a>
+    <div id="main-page">
+      <div class="carousel-container">
+        <button class="left"> < </button>
+        <div class="games-carousel">
+            <section class="game-section">
+              <div class="game-item">
+                <img src="images/pong.jpg" alt="Game 1">
+                <div class="game-info">
+                  <h2>Pong</h2>
+                  <h3>1972</h3>
+                  <a href="/pong" class="play-link">Play Now ></a>
+                </div>
+              </div>        
+            </section>
+            <section class="game-section">
+              <div class="game-item">
+                <img src="images/pacman.jpg" alt="Game 2">
+                <div class="game-info">
+                  <h2>Pacman</h2>
+                  <h3>1980</h3>
+                  <a href="/pacman" class="play-link">Play Now ></a>
+                </div>
               </div>
-            </div>        
-          </section>
-          <section class="game-section">
-            <div class="game-item">
-              <img src="images/pacman.jpg" alt="Game 2">
-              <div class="game-info">
-                <h2>Pacman</h2>
-                <h3>1980</h3>
-                <a href="/pacman" class="play-link">Play Now ></a>
+            </section>
+            <section class="game-section">
+              <div class="game-item">
+                <img src="images/tetris.jpg" alt="Game 3">
+                <div class="game-info">
+                  <h2>Tetris</h2>
+                  <h3>1984</h3>
+                  <a href="/tetris" class="play-link">Play Now ></a>
+                </div>
               </div>
-            </div>
-          </section>
-          <section class="game-section">
-            <div class="game-item">
-              <img src="images/tetris.jpg" alt="Game 3">
-              <div class="game-info">
-                <h2>Tetris</h2>
-                <h3>1984</h3>
-                <a href="/tetris" class="play-link">Play Now ></a>
-              </div>
-            </div>
-          </section>
-          <section class="game-section">
-            <div class="game-item">
-              <img src="images/spaceinvaders.jpg" alt="Game 5">
-              <div class="game-info">
-                <h2>Space Invaders</h2>
-                <h3>1978</h3>
-                <a href="spaceinvaders" class="play-link">Play Now ></a>
-              </div>
-            </div> 
-          </section>
-          <section class="game-section">
-            <div class="game-item">
-              <img src="images/mario.jpg" alt="Game 5">
-              <div class="game-info">
-                <h2>Super Mario</h2>
-                <h3>1985</h3>
-                <a href="mario" class="play-link">Play Now ></a>
-              </div>
-            </div>      
-          </section>
-        </div>
-        <button class="right"> > </button>
-      </div>    
-    <script type="module" src="./app.js"></script>
+            </section>
+            <section class="game-section">
+              <div class="game-item">
+                <img src="images/spaceinvaders.jpg" alt="Game 5">
+                <div class="game-info">
+                  <h2>Space Invaders</h2>
+                  <h3>1978</h3>
+                  <a href="spaceinvaders" class="play-link">Play Now ></a>
+                </div>
+              </div> 
+            </section>
+            <section class="game-section">
+              <div class="game-item">
+                <img src="images/mario.jpg" alt="Game 5">
+                <div class="game-info">
+                  <h2>Super Mario</h2>
+                  <h3>1985</h3>
+                  <a href="mario" class="play-link">Play Now ></a>
+                </div>
+              </div>      
+            </section>
+          </div>
+          <button class="right"> > </button>
+        </div>    
+    </div>
+  </div>
+      <script src="./scripts/app.js"></script>
+      <script src="./scripts/router.js"></script>
 </body>
 </html>

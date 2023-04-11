@@ -4,11 +4,11 @@ const path = require('path')
 const port = 3000
 
 // middleware
-app.use(express.static(path.join(__dirname, '../public')))
+console.log(__dirname )
+app.use(express.static(path.join(__dirname, 'public')))
 
-// single route for index page. All
-app.get('/', (req, res) => {
-  res.render('index')
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 // binds to port to listen for any connections

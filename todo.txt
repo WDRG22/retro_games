@@ -3,11 +3,12 @@
 - Implement fetch API for client-side rendering
 - Implement history API for client-side routing
 - Implement localStorage API to store high scores and other data in browser cache
-- Add github, twitter, linkedin links to navbar or elsewhere 
 - Create pong game using vanilla javascript first to use as POC 
     - Use HTML5 canvas element and keyboard events API to implement browser games
     - Explore possible use of libraries such as Konva.js or Phaser.js
 	- https://gist.github.com/straker/3c98304f8a6a9174efd8292800891ea1
+- Add github, twitter, linkedin links to navbar or elsewhere 
+- Fix image stretch flash on home page load
 
 Long-Term:
 - Implement user authentication ??
