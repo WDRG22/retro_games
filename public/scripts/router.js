@@ -8,9 +8,7 @@ export default class Router {
     // Loads html, css, and js files
     async handleRouteChange(event) {
         const path = event ? new URL(event.target.href).pathname : window.location.pathname;
-        console.log(path)
-        window.history.pushState({}, '', path);
-
+        
         // initialize route to 404
         let route = this.routes[this.routes.length -1]
     
@@ -21,18 +19,18 @@ export default class Router {
                 route = this.routes[index]
             } 
         }
-    
-        // load route template
+ 
+        // Load route template
         const html = await fetch(route.template).then((data) => data.text());
         document.getElementById("main-page").innerHTML = html;
     
-        // load route script
+        // Load route script
         const script = document.createElement("script");
         script.type = "module"
         script.src = route.script
         document.body.appendChild(script)
         
-        // update url
-        window.history.pushState({}, "", route.path)
+        // Update current route and window history
+        window.history.pushState({ path }, '', path);
     }    
 }
