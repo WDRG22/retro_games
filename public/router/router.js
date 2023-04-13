@@ -13,7 +13,13 @@ class Router {
     // Adds new route to window history. 
     // Loads html, css, and js files
     handleRouteChange(event) {
-        const path = event ? new URL(event.target.href).pathname : window.location.pathname;
+        const url = new URL(event.target.href);
+        const path = event ? url.pathname : window.location.pathname;
+
+        if (url.hostname !== window.location.hostname){
+            window.open(url.href, '_blank')
+            return
+        }
         
         if (path === this.currentRoute) return // Do nothing if same route
         else this.currentRoute = path

@@ -1,0 +1,48 @@
+/*# sourceMappingURL=styles.css.map */
+.game-container{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    #game-canvas {
+        padding: 0;
+        margin: auto;
+        display: block;
+        width: 858px;
+        height: 525px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+    
+        #paddle-left,
+        #paddle-right {
+            width: 10px;
+            height: 60px;
+            position: absolute;
+            top: 170px;
+            background-color: white;
+        }
+    
+        #paddle-left {
+            left: 20px;
+        }
+    
+        #paddle-right {
+            right: 20px;
+        }
+    
+        #ball {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 195px;
+            left: 295px;
+            background-color: white;
+            border-radius: 50%;
+        }
+    }
+}    
+

@@ -32,7 +32,7 @@ body #nav a {
 }
 body #main-body {
   flex: auto;
-  overflow: auto;
+  overflow: hidden;
 }
 body #footer {
   margin-left: 25px;
