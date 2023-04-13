@@ -15,7 +15,7 @@ router.handleRouteChange();
 // to avoid binding event listeners to dynamically rendered links
 // NOTE: event.target.href returns full url (e.g. localhost:3000/pong), rather than 
 // html tag's href property (e.g. href='/pong')
-// Solution to use URL builder in handleRouteChange() function
+// Solution uses URL builder in handleRouteChange() function
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('router-link')) {
       event.preventDefault();
