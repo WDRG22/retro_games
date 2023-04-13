@@ -1,7 +1,8 @@
 - [DONE] Edit carousel to loop infinitely
-- [CANCELLED]Implement express router system to serve home and game pages to frontend
-- Implement fetch API for client-side rendering
-- Implement history API for client-side routing
+- [SCRAPPED] Implement express router system to serve home and game pages to frontend
+- [DONE] Implement fetch and history APIs for client-side rendering
+    - Rework innerHTML routing for XSS security?
+    - Other security measures?
 - Implement localStorage API to store high scores and other data in browser cache
 - Create pong game using vanilla javascript first to use as POC 
     - Use HTML5 canvas element and keyboard events API to implement browser games

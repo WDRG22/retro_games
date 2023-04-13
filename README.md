@@ -1,4 +1,4 @@
-SPA using CSR
+Frameworkless single-page app using clients-side routing
 
 Technologies:
 Vanilla js, html, scss

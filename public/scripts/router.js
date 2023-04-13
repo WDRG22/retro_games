@@ -1,38 +1,50 @@
-export default class Router {
-    constructor(routes){
+class Router {
+    constructor(routes, renderNode){
         this.routes = routes;
+        this.renderNode = renderNode                
     }
 
     // Handles route change for onclick events or browser back/forward navigation.
     // Adds new route to window history. 
     // Loads html, css, and js files
-    async handleRouteChange(event) {
+    handleRouteChange(event) {
         const path = event ? new URL(event.target.href).pathname : window.location.pathname;
-        console.log(path)
-        window.history.pushState({}, '', path);
+        window.history.pushState({path: path}, '', path);
+        this.loadRoute(path);
+    }
+    
+    async loadRoute(path){
 
-        // initialize route to 404
-        let route = this.routes[this.routes.length -1]
+        // Match path to route in routes
+        const route = this.routes.filter(route => path == route.path)[0];
+
+        // If no route match, load 404
+        if (!route) {
+            this.renderNode.innerHTML = '404 Page not found :(';
+            return
+        };
     
-        // if path corresponds to a route in routes, update route 
-        // if not, route remains as 404
-        for (let index = 0; index < this.routes.length; index++) {
-            if (path === this.routes[index].path){
-                route = this.routes[index]
-            } 
-        }
-    
-        // load route template
+        // Load route template
         const html = await fetch(route.template).then((data) => data.text());
-        document.getElementById("main-page").innerHTML = html;
+        this.renderNode.innerHTML = html        
     
-        // load route script
-        const script = document.createElement("script");
-        script.type = "module"
-        script.src = route.script
-        document.body.appendChild(script)
-        
-        // update url
-        window.history.pushState({}, "", route.path)
+        // Load script
+        const scriptId = 'route-script';
+        const existingScript = document.getElementById(scriptId);
+
+        if (existingScript) {
+            existingScript.parentNode.removeChild(existingScript);
+        }
+
+        if (route.script) {
+            const script = document.createElement('script');
+            script.src = route.script;
+            script.id = scriptId;
+            script.async = true;
+            document.body.appendChild(script);
+        }
     }    
 }
+
+
+export default Router;

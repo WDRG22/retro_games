@@ -1,15 +1,14 @@
 import Router from './scripts/router.js'
 import { routes } from './scripts/routes.js';
 
-const router = new Router(routes);
+
+const renderNode = document.getElementById("root")
+const router = new Router(routes, renderNode);
 
 // Browser back/forward buttons call handleRouteChange
-window.onpopstate = router.handleRouteChange;
+window.addEventListener('popstate', event => router.loadRoute(event.state.path));
 
-// Give global access to 'handleRouteChange' function
-window.handleRouteChange = router.handleRouteChange;
-
-// Call on pageLoad
+// Handle route on initial page load
 router.handleRouteChange();
 
 // Attaches event listener to document object to use event delegation
