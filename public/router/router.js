@@ -1,7 +1,12 @@
 class Router {
-    constructor(routes, renderNode){
+    constructor(routes, renderNode, currentRoute){
         this.routes = routes;
-        this.renderNode = renderNode                
+        this.renderNode = renderNode;
+        this.currentRoute = currentRoute;            
+    }
+
+    initialPageLoad(){
+        this.loadRoute(window.location.pathname);
     }
 
     // Handles route change for onclick events or browser back/forward navigation.
@@ -9,8 +14,11 @@ class Router {
     // Loads html, css, and js files
     handleRouteChange(event) {
         const path = event ? new URL(event.target.href).pathname : window.location.pathname;
+        
+        if (path === this.currentRoute) return // Do nothing if same route
+        else this.currentRoute = path
+
         window.history.pushState({path: path}, '', path);
-        console.log(history)
         this.loadRoute(path);
     }
     

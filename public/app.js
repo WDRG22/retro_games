@@ -3,13 +3,13 @@ import { routes } from './router/routes.js';
 
 
 const renderNode = document.getElementById("main-body")
-const router = new Router(routes, renderNode);
+const router = new Router(routes, renderNode, window.location.pathname);
 
 // Browser back/forward buttons call handleRouteChange
 window.addEventListener('popstate', event => router.loadRoute(event.state.path));
 
 // Handle route on initial page load
-router.handleRouteChange();
+router.initialPageLoad();
 
 // Attaches event listener to document object to use event delegation
 // to avoid binding event listeners to dynamically rendered links
