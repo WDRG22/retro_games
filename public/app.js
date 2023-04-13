@@ -1,8 +1,8 @@
-import Router from './scripts/router.js'
-import { routes } from './scripts/routes.js';
+import Router from './router/router.js'
+import { routes } from './router/routes.js';
 
 
-const renderNode = document.getElementById("root")
+const renderNode = document.getElementById("main-body")
 const router = new Router(routes, renderNode);
 
 // Browser back/forward buttons call handleRouteChange

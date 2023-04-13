@@ -9,7 +9,8 @@
     - Explore possible use of libraries such as Konva.js or Phaser.js
 	- https://gist.github.com/straker/3c98304f8a6a9174efd8292800891ea1
 - Add github, twitter, linkedin links to navbar or elsewhere 
-- Fix image stretch flash on home page load
+- Create profile and about pages
+- Fix intial unstyled elements flash on refresh
 
 Long-Term:
 - Implement user authentication ??

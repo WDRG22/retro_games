@@ -10,6 +10,7 @@ class Router {
     handleRouteChange(event) {
         const path = event ? new URL(event.target.href).pathname : window.location.pathname;
         window.history.pushState({path: path}, '', path);
+        console.log(history)
         this.loadRoute(path);
     }
     
@@ -23,19 +24,40 @@ class Router {
             this.renderNode.innerHTML = '404 Page not found :(';
             return
         };
+
+        // Load route template, replace script and styling
+        this.renderNode.innerHTML = ""
+        this.replaceStyling(route);
+        this.renderNode.innerHTML = await fetch(route.template).then((data) => data.text());
+        this.replaceScript(route);
+    }    
+
+    // Removes previous route styling and adds current route styling
+    replaceStyling(route){
+        const cssId = 'route-styles';
+        const existingCss = document.getElementById(cssId);
+        
+        if (existingCss) { 
+            existingCss.parentNode.removeChild(existingCss);
+        }
+        
+        if (route.styles) { 
+            const css = document.createElement('link');
+            css.href = route.styles;
+            css.rel = 'stylesheet';
+            css.id = cssId;
+            document.head.appendChild(css);
+        }
+    }
     
-        // Load route template
-        const html = await fetch(route.template).then((data) => data.text());
-        this.renderNode.innerHTML = html        
-    
-        // Load script
+    // Removes previous route script and adds current route script
+    replaceScript(route){
         const scriptId = 'route-script';
         const existingScript = document.getElementById(scriptId);
-
+        
         if (existingScript) {
             existingScript.parentNode.removeChild(existingScript);
         }
-
         if (route.script) {
             const script = document.createElement('script');
             script.src = route.script;
@@ -43,8 +65,7 @@ class Router {
             script.async = true;
             document.body.appendChild(script);
         }
-    }    
+    }
 }
-
 
 export default Router;

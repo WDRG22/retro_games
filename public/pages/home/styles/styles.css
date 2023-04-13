@@ -1,0 +1,69 @@
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-container .left,
+.carousel-container .right {
+  height: 15%;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  color: black;
+  font-size: 5rem;
+  overflow: hidden;
+  text-align: end;
+}
+.carousel-container .left {
+  margin-left: 25px;
+}
+.carousel-container .right {
+  margin-right: 25px;
+}
+.carousel-container .games-carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  flex-direction: row;
+  justify-content: left;
+  scroll-snap-type: x proximity;
+}
+.carousel-container .games-carousel .game-section {
+  width: 100%;
+  height: 100%;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
+}
+.carousel-container .games-carousel .game-section .game-item {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-container .games-carousel .game-section .game-item img {
+  width: 50%;
+  height: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.carousel-container .games-carousel .game-section .game-item .game-info {
+  padding-left: 25px;
+}
+.carousel-container .games-carousel .game-section .game-item h3 {
+  font-weight: normal;
+  font-style: italic;
+}
+.carousel-container .games-carousel .game-section .game-item a {
+  color: inherit;
+}/*# sourceMappingURL=styles.css.map */
