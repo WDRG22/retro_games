@@ -1,18 +1,25 @@
 - [DONE] Edit carousel to loop infinitely
 - [SCRAPPED] Implement express router system to serve home and game pages to frontend
+- [DONE] Add github link to footer
 - [DONE] Implement fetch and history APIs for client-side rendering
-    - Rework innerHTML routing for XSS security?
-    - Other security measures?
-- Implement localStorage API to store high scores and other data in browser cache
-- Implement Canvas API to create pong game
+- [DONE] Create routes to profile and about pages
+- [DONE] Fix intial unstyled elements flash on refresh
+- [IN PROGRESS] Integrate MongoDB database
+    - Implement mongoose Object Data Modeling library
+    - Define data model for user accounts
+    - Implement repository pattern for r/w to db
+    - Implement passport.js library for user authentication
+    - Implement methods to track user sessions
+    - Implement caching to reduce db query frequency?
+- Rework innerHTML routing for XSS security and any other security measures?
+- [IN PROGRESS]Implement Canvas API to create pong game
 	- https://gist.github.com/straker/3c98304f8a6a9174efd8292800891ea1
-- Add github, twitter, linkedin links to navbar or elsewhere 
-- Create profile and about pages
-- Fix intial unstyled elements flash on refresh
+- Implement logging library (e.g. winston)
+- Implement rate-limiting to safeguard DDoS attacks
+- Add input validation to request bodies (e.g. joi library)
 
 Long-Term:
 - Implement user authentication ??
-- Create and connect SQL database ??
 - Refactor site to store user accounts and game data in database ??
 - Host site on aws ?? 
 - Register a domain name ??

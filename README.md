@@ -7,7 +7,11 @@ Vanilla js, html, scss
 Node/Express.js backend
 nodemon
 mongoose
+passport
+passport-local-mongoose
 mongodb
+bodyParser
+dotenv
 
 Dependencies:
 - express v4.18.2

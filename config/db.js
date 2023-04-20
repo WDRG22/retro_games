@@ -1,11 +1,16 @@
-const Mongoose = require('mongoose');
-const uri = 'mongodb+srv://wdrgibson:ommanipadmehum3@cluster0.odup4vd.mongodb.net/?retryWrites=true&w=majority';
+const mongoose = require('mongoose');
+require('dotenv').config();
+const uri = process.env.MONGODB_URI
 
 const connectDB = async () => {
-	await Mongoose.connect(uri, {
+	await mongoose.connect(uri, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
+	}).then(() => {
+		console.log('MongoDB Connected');
+	}).catch(err => {
+		console.error(err);
 	});
-	console.log('MongoDB Connected');
 };
+
 module.exports = connectDB;
