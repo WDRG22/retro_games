@@ -21,68 +21,68 @@ let ballSpeedY = ballSpeed;
 
 // Event listener for mouse movement
 canvas.addEventListener('mousemove', (e) => {
-  playerPaddleY = e.clientY - (paddleHeight / 2);
+	playerPaddleY = e.clientY - (paddleHeight / 2);
 });
 
 // Update function
 function update() {
-  // Move the opponent paddle towards the ball
-  if (opponentPaddleY + (paddleHeight / 2) < ballY) {
-    opponentPaddleY += paddleSpeed;
-  } else {
-    opponentPaddleY -= paddleSpeed;
-  }
+	// Move the opponent paddle towards the ball
+	if (opponentPaddleY + (paddleHeight / 2) < ballY) {
+		opponentPaddleY += paddleSpeed;
+	} else {
+		opponentPaddleY -= paddleSpeed;
+	}
 
-  // Update ball position
-  ballX += ballSpeedX;
-  ballY += ballSpeedY;
+	// Update ball position
+	ballX += ballSpeedX;
+	ballY += ballSpeedY;
 
-  // Bounce ball off top and bottom walls
-  if (ballY < 0 || ballY > canvasHeight - ballSize) {
-    ballSpeedY = -ballSpeedY;
-  }
+	// Bounce ball off top and bottom walls
+	if (ballY < 0 || ballY > canvasHeight - ballSize) {
+		ballSpeedY = -ballSpeedY;
+	}
 
-  // Check if ball collides with player paddle
-  if (ballX < paddleWidth && ballY > playerPaddleY && ballY < playerPaddleY + paddleHeight) {
-    ballSpeedX = -ballSpeedX;
-  }
+	// Check if ball collides with player paddle
+	if (ballX < paddleWidth && ballY > playerPaddleY && ballY < playerPaddleY + paddleHeight) {
+		ballSpeedX = -ballSpeedX;
+	}
 
-  // Check if ball collides with opponent paddle
-  if (ballX > canvasWidth - paddleWidth - ballSize && ballY > opponentPaddleY && ballY < opponentPaddleY + paddleHeight) {
-    ballSpeedX = -ballSpeedX;
-  }
+	// Check if ball collides with opponent paddle
+	if (ballX > canvasWidth - paddleWidth - ballSize && ballY > opponentPaddleY && ballY < opponentPaddleY + paddleHeight) {
+		ballSpeedX = -ballSpeedX;
+	}
 
-  // Reset ball if it goes off left or right edge of screen
-  if (ballX < 0 || ballX > canvasWidth) {
-    ballX = canvasWidth / 2;
-    ballY = canvasHeight / 2;
-    ballSpeedX = ballSpeed;
-    ballSpeedY = ballSpeed;
-  }
+	// Reset ball if it goes off left or right edge of screen
+	if (ballX < 0 || ballX > canvasWidth) {
+		ballX = canvasWidth / 2;
+		ballY = canvasHeight / 2;
+		ballSpeedX = ballSpeed;
+		ballSpeedY = ballSpeed;
+	}
 }
 
 // Render function
 function render() {
-  // Clear canvas
-  ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+	// Clear canvas
+	ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-  // Draw player paddle
-  ctx.fillRect(0, playerPaddleY, paddleWidth, paddleHeight);
+	// Draw player paddle
+	ctx.fillRect(0, playerPaddleY, paddleWidth, paddleHeight);
 
-  // Draw opponent paddle
-  ctx.fillRect(canvasWidth - paddleWidth, opponentPaddleY, paddleWidth, paddleHeight);
+	// Draw opponent paddle
+	ctx.fillRect(canvasWidth - paddleWidth, opponentPaddleY, paddleWidth, paddleHeight);
 
-  // Draw ball
-  ctx.fillRect(ballX - (ballSize / 2), ballY - (ballSize / 2), ballSize, ballSize);
+	// Draw ball
+	ctx.fillRect(ballX - (ballSize / 2), ballY - (ballSize / 2), ballSize, ballSize);
 }
 
 // Game loop
 function gameLoop() {
-  update();
-  render();
-  requestAnimationFrame(gameLoop);
+	update();
+	render();
+	requestAnimationFrame(gameLoop);
 }
 
 // Start the game loop
 gameLoop();
-console.log('here')
+console.log('here');

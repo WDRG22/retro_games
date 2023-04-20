@@ -20,3 +20,6 @@ Long-Term:
 - Set up a server (nginx?) ??
 - Add security ??
 - Use tools to test website ??
+
+
+https://gist.github.com/straker/81b59eecf70da93af396f963596dfdc5
