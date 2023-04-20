@@ -88,7 +88,6 @@ app.get('/logout', function(req, res) {
 });
 
 
-
 // Binds to port to listen for any connections
 const server = app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
