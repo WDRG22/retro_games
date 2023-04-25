@@ -80,14 +80,20 @@ app.get('/users', async (req, res) => {
 
 app.post('/users', async (req, res) => {
   try {
+
+    // Retrieve data from posted HTML form
     const { username, email, password } = req.body;
     const user = new User({ username, email });
-    await user.setPassword(password);
-    await user.save();
-    res.json(user);
+    await user.setPassword(password); // Hash and salt password
+    await user.save(); // Save new user to db
+    res.json(user); // Send reponse w/ new user object
   } catch (err) {
-    console.log(err);
-    res.status(500).json({error: 'Internal server error'});
+    if (err.code == 11000){
+      res.status(400).json({error: "Username or email already exists"});
+    } else {
+      console.log(err);
+      res.status(500).json({error: 'Internal server error'});
+    }
   }
 })
 
