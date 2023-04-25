@@ -4,8 +4,9 @@ const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
-    username: {type: String, required: true, unique: true},
-    password: {type: String, required: true},
+    email: {type: String, required: true, index: true, unique: true},
+    username: {type: String, required: true, index: true, unique: true},
+    password: {type: String},
 });
 
 // Add passport-local-mongoose plugin to handle password hashing and salting

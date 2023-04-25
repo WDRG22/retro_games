@@ -1,6 +1,5 @@
 function initHome(){
-	console.log('home.js is running...');
-    
+   
 	const carousel = document.querySelector('.games-carousel');
 	const gameSection = document.querySelector('.game-section');
 	const rightButton = document.querySelector('.right');

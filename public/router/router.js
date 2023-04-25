@@ -32,6 +32,7 @@ class Router {
 
 		// Match path to route in routes
 		const route = this.routes.filter(route => path == route.path)[0];
+		console.log(path)
 
 		// If no route match, load 404
 		if (!route) {

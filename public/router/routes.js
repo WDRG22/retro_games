@@ -46,5 +46,5 @@ export const routes = [
 		template: 'games/mario/mario.html',
 		script: 'games/mario/mario.js',
 		styles: 'games/mario/styles/styles.css'
-	}
+	},
 ];

@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./user');
 const connectDB = require("../config/db");
+require('dotenv').config();
 const port = 3000;
+const secret = process.env.SESSION_SECRET;
 
 
 // Connect to mongoDB database
@@ -15,6 +18,13 @@ connectDB();
 // MIDDLEWARE
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
+
+// Stores session data on server and associates it with client's session ID
+app.use(session({
+  secret: secret,
+  resave: false,
+  saveUninitialized: false
+}));
 
 // Define passport strategy to handle user authentication
 passport.use(new LocalStrategy(
@@ -54,6 +64,10 @@ passport.deserializeUser(async function(id, done) {
 });
 
 // ROUTES
+app.get('*', async (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 app.get('/users', async (req, res) => {
   try { 
     const users = await User.find();
@@ -66,8 +80,8 @@ app.get('/users', async (req, res) => {
 
 app.post('/users', async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const user = new User({ username});
+    const { username, email, password } = req.body;
+    const user = new User({ username, email });
     await user.setPassword(password);
     await user.save();
     res.json(user);

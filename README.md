@@ -12,6 +12,7 @@ passport-local-mongoose
 mongodb
 bodyParser
 dotenv
+express-session
 
 Dependencies:
 - express v4.18.2
