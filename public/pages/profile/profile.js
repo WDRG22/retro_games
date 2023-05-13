@@ -1,5 +1,4 @@
-
-async function postData(){
+async function postUser(){
     // Get user values
     const username = document.getElementById("username-input").value;
     const email = document.getElementById("email-input").value;
@@ -17,4 +16,16 @@ async function postData(){
     // Handle the response
     const result = await response.json();
     console.log(result);
+}
+
+
+async function getUsers(){
+
+    // Send request
+    const response = await fetch('/users', {
+        method: 'GET',
+    })
+
+    const result = await response.json();
+    console.log(result)
 }

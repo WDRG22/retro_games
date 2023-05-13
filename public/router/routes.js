@@ -41,10 +41,4 @@ export const routes = [
 		script: 'games/invaders/invaders.js',
 		styles: 'games/invaders/styles/styles.css'
 	},
-	{
-		path: '/mario',
-		template: 'games/mario/mario.html',
-		script: 'games/mario/mario.js',
-		styles: 'games/mario/styles/styles.css'
-	},
 ];

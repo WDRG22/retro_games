@@ -8,8 +8,8 @@
   padding: 0;
   margin: auto;
   display: block;
-  width: 858px;
-  height: 525px;
+  width: 600px;
+  height: 400px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -19,8 +19,8 @@
 }
 .game-container #game-canvas #paddle-left,
 .game-container #game-canvas #paddle-right {
-  width: 10px;
-  height: 60px;
+  width: 5px;
+  height: 30px;
   position: absolute;
   top: 170px;
   background-color: white;

@@ -1,15 +1,19 @@
 // Define canvas and context
 const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
+ctx.strokeStyle = 'white';
+ctx.fillStyle = 'white';
 
 // Define constants
 const canvasWidth = canvas.width;
 const canvasHeight = canvas.height;
-const paddleWidth = 10;
-const paddleHeight = 75;
-const paddleSpeed = 5;
-const ballSize = 10;
-const ballSpeed = 5;
+const centerLineWidth = 5;
+const centerLineX = (canvasWidth / 2) - 1;
+const paddleWidth = 5;
+const paddleHeight = 30;
+const paddleSpeed = 2;
+const ballSize = 5;
+const ballSpeed = 2;
 
 // Define variables
 let playerPaddleY = (canvasHeight - paddleHeight) / 2;
@@ -19,9 +23,29 @@ let ballY = canvasHeight / 2;
 let ballSpeedX = ballSpeed;
 let ballSpeedY = ballSpeed;
 
+function createBackground(){
+	// Dashed line
+	ctx.beginPath();
+	ctx.setLineDash([5, 5]);
+	ctx.moveTo(canvasWidth / 2, 0);
+	ctx.lineTo(canvasWidth / 2, canvasHeight);
+	ctx.stroke();
+}
+
 // Event listener for mouse movement
 canvas.addEventListener('mousemove', (e) => {
-	playerPaddleY = e.clientY - (paddleHeight / 2);
+	const canvasRect = canvas.getBoundingClientRect();
+	const offsetY = e.clientY - canvasRect.top;
+	const normalizedY = offsetY / canvasRect.height; // Normalize mouse position
+
+	playerPaddleY = (canvasHeight - paddleHeight) * normalizedY;
+
+	// Ensure the paddle stays within the vertical boundaries
+	if (playerPaddleY < 0) {
+		playerPaddleY = 0;
+	} else if (playerPaddleY + paddleHeight > canvasHeight) {
+		playerPaddleY = canvasHeight - paddleHeight;
+	}
 });
 
 // Update function
@@ -66,6 +90,9 @@ function render() {
 	// Clear canvas
 	ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
+	// Draw background
+	createBackground();
+
 	// Draw player paddle
 	ctx.fillRect(0, playerPaddleY, paddleWidth, paddleHeight);
 
@@ -76,6 +103,8 @@ function render() {
 	ctx.fillRect(ballX - (ballSize / 2), ballY - (ballSize / 2), ballSize, ballSize);
 }
 
+
+
 // Game loop
 function gameLoop() {
 	update();
@@ -85,4 +114,3 @@ function gameLoop() {
 
 // Start the game loop
 gameLoop();
-console.log('here');
